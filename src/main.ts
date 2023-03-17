@@ -1,7 +1,5 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-
-// @ts-ignore
 import App from './App'
 import router from './router'
 
