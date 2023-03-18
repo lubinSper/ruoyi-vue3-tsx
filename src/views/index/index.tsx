@@ -4,8 +4,8 @@ export default defineComponent({
   setup() {
     return ()=>(
       <div>
-        <el-row gutter="20">
-          <el-col sm="24" lg="12" style="padding-left: 20px">
+        <el-row gutter={20}>
+          <el-col sm={24} lg={12} style="padding-left: 20px">
             <h2>若依后台管理框架</h2>
             <p>
               感谢老大哥ruoyi
@@ -30,14 +30,14 @@ export default defineComponent({
             </p>
           </el-col>
         </el-row>
-        <el-row sm="24" lg="12" style="padding-left: 50px">
+        <el-row sm={24} lg={12} style="padding-left: 50px">
         <el-row>
-          <el-col span="12">
+          <el-col span={12}>
           <h2>技术选型</h2>
           </el-col>
         </el-row>
         <el-row>
-            <el-col span="6">
+            <el-col span={6}>
               <h4>后端技术</h4>
               <ul>
                 <li>SpringBoot</li>
@@ -49,7 +49,7 @@ export default defineComponent({
                 <li>...</li>
               </ul>
             </el-col>
-            <el-col span="6">
+            <el-col span={6}>
             <h4>前端技术</h4>
             <ul>
               <li>Vue</li>

@@ -11,5 +11,6 @@
       "path": "./tsconfig.vitest.json"
     }
   ],
-  "jsx": "preserve"
+  "jsx": "preserve",
+  "include": ["src/**/*.ts","vite/plugins/"],
 }
