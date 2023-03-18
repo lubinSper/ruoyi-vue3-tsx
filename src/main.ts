@@ -7,7 +7,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 import 'element-plus/dist/index.css'
 import store from './store'
-
+import './permission' // permission control
 import '@/assets/styles/index.scss' // global css
 const app = createApp(App)
 

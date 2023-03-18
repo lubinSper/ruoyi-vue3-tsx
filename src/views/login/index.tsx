@@ -121,10 +121,7 @@ export default defineComponent({
             </el-button>
           </el-form-item>
         </el-form>
-
         <div class={style.elLoginFooter}>
-          <button onClick={handleLogin}>测试按钮</button>
-
           <span>Copyright © 2018-2023 ruoyi.vip All Rights Reserved.</span>
         </div>
       </div>

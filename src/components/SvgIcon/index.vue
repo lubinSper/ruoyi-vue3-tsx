@@ -1,8 +1,10 @@
-
+<template>
+  <svg :class="svgClass" aria-hidden="true">
+    <use :xlink:href="iconName" :fill="color" />
+  </svg>
+</template>
 
 <script>
-import { defineComponent } from "vue";
-
 export default defineComponent({
   props: {
     iconClass: {
@@ -49,9 +51,3 @@ export default defineComponent({
   vertical-align: -2px;
 }
 </style>
-
-<template>
-  <svg :class="svgClass" aria-hidden="true">
-    <use :xlink:href="iconName" :fill="color" />
-  </svg>
-</template>
