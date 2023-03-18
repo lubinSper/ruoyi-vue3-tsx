@@ -1,6 +1,7 @@
 import { defineComponent, ref } from 'vue'
 import style from './Login.module.scss'
-
+// @ts-ignore
+import {getCodeImg} from '@/api/login'
 export default defineComponent({
   setup() {
     const loginForm = ref({
@@ -12,7 +13,9 @@ export default defineComponent({
     })
     const captchaEnabled = ref(true)
     const loginRules = ref({
-
+      username: [{ required: true, trigger: "blur", message: "请输入您的账号" }],
+      password: [{ required: true, trigger: "blur", message: "请输入您的密码" }],
+      code: [{ required: true, trigger: "change", message: "请输入验证码" }]
     })
     const loading = ref(false)
     const codeUrl = ref('')
@@ -28,9 +31,15 @@ export default defineComponent({
     function handleLogin() {
 
     }
-    function getCode() {
-
+    async function getCode() {
+      const res = await getCodeImg();
+      captchaEnabled.value = res.captchaEnabled === undefined ? true : res.captchaEnabled;
+      if (captchaEnabled.value) {
+        codeUrl.value = "data:image/gif;base64," + res.img;
+        loginForm.value.uuid = res.uuid;
+      }
     }
+    getCode()
     return () => (
       <div class={style.login}>
         <el-form ref="loginRef" model={loginForm} rules={loginRules} class={style.loginForm}>
