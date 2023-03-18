@@ -7,7 +7,6 @@ export default defineComponent({
         <>
           <router-view></router-view>
         </>
-
       )
     }
   }
