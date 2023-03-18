@@ -1,3 +1,5 @@
+import { defineStore } from 'pinia';
+
 const useTagsViewStore = defineStore(
   'tags-view',
   {
