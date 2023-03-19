@@ -106,7 +106,7 @@ export default defineComponent({
             captchaEnabled.value && <el-form-item prop="captcha">
               <el-input v-model={loginForm.value.code} size="large"
                         autocomplete="off" placeholder="验证码" style="width:63%"
-                        onEnter={handleLogin} v-slots={captchaSlot}></el-input>
+                        onKeyupEnter={handleLogin} v-slots={captchaSlot}></el-input>
               <div class={style.loginCode}>
                 <img src={codeUrl.value} onClick={getCode} class={style.loginCodeImg}/>
               </div>

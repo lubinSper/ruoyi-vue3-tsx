@@ -7,7 +7,7 @@ import InnerLink from '@/layout/components/InnerLink'
 import { defineStore } from 'pinia';
 
 // 匹配views里面所有的.vue文件
-const modules = import.meta.glob('./../../views/**/*.vue')
+const modules = import.meta.glob('./../../views/**/*.tsx')
 
 const usePermissionStore = defineStore(
   'permission',
@@ -110,6 +110,7 @@ function filterChildren(childrenMap, lastRouter = false) {
 
 // 动态路由遍历，验证是否具备权限
 export function filterDynamicRoutes(routes) {
+  console.log(routes)
   const res = []
   routes.forEach(route => {
     if (route.permissions) {
@@ -128,7 +129,7 @@ export function filterDynamicRoutes(routes) {
 export const loadView = (view) => {
   let res;
   for (const path in modules) {
-    const dir = path.split('views/')[1].split('.vue')[0];
+    const dir = path.split('views/')[1].split('.tsx')[0];
     if (dir === view) {
       res = () => modules[path]();
     }
