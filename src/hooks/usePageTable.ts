@@ -19,7 +19,7 @@ interface PageTableParams<T> {
 /**
  * table表格的hook封装, 默认pageNum=1， pageSize=10
  */
-export function usePageTable<T>(p: { apiBaseUrl: string; params: Ref<UnwrapRef<{ phonenumber: string; userName: string; status: string }>> }) {
+export function usePageTable<T>(p: { apiBaseUrl: string; params: Ref<UnwrapRef<{ any:any }>> }) {
   const { setFalse: stopLoading, setTrue: startLoading, bool: loading } = useBoolean();
   const { setFalse: modalHide, setTrue: modalShow, bool: modalVisile } = useBoolean();
   const GetApiFn = (args:any) => request({
