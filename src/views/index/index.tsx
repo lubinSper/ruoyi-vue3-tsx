@@ -51,6 +51,7 @@ export default defineComponent({
               <ul>
                 <li>Vue</li>
                 <li>Vuex</li>
+                <li>babel-plugin-jsx</li>
                 <li>Element-ui</li>
                 <li>Axios</li>
                 <li>Sass</li>
